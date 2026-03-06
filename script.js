@@ -10,26 +10,29 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                targetElement.scrollIntoView({
+                // Account for the sticky header offset
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
             }
         });
     });
 
-    // Simple interaction for CTA buttons
-    const mainCta = document.getElementById('cta-main');
-    const secondaryCta = document.getElementById('cta-secondary');
-
-    if (mainCta) {
-        mainCta.addEventListener('click', () => {
-            alert('Redirecting to project onboarding for A4andox...');
+    // Optional: Add a simple hover effect to service cards using JS
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    serviceCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.backgroundColor = '#fff';
         });
-    }
-
-    if (secondaryCta) {
-        secondaryCta.addEventListener('click', () => {
-            alert('Opening contact channels...');
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.backgroundColor = 'var(--bg-cream)';
         });
-    }
+    });
 });
