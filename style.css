@@ -3,7 +3,6 @@
     --bg-cream: #FAF6EE;
     --text-black: #1A1A1A;
     --accent-orange: #E86343;
-    --accent-blue: #5C62F3;
     --border-dark: #111111;
     --font-heading: 'DM Serif Display', serif;
     --font-body: 'Inter', sans-serif;
@@ -32,7 +31,8 @@ h1, h2, h3, .logo, .footer-logo {
     font-family: var(--font-heading);
 }
 
-.text-blue { color: var(--accent-blue); }
+/* Both text classes now point to orange to match your new theme */
+.text-blue { color: var(--accent-orange); } 
 .text-orange { color: var(--accent-orange); }
 
 /* Navigation */
@@ -175,7 +175,7 @@ h1, h2, h3, .logo, .footer-logo {
     font-family: var(--font-heading);
     font-weight: bold;
     font-size: 2.5rem;
-    color: var(--accent-blue);
+    color: var(--accent-orange); /* Changed from blue to orange */
     min-width: 80px;
     border-right: 3px solid var(--border-dark);
     margin-right: 2rem;
