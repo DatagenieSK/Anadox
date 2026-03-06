@@ -44,4 +44,38 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // 3. Form Submission & LocalStorage Logic
+    const contactForm = document.getElementById('a4ContactForm');
+    const successToast = document.getElementById('successToast');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevents page reload
+
+            // Gather form data
+            const formData = {
+                name: document.getElementById('userName').value,
+                email: document.getElementById('userEmail').value,
+                message: document.getElementById('userMessage').value,
+                date: new Date().toLocaleString()
+            };
+
+            // Fetch existing submissions or create an empty array
+            let submissions = JSON.parse(localStorage.getItem('a4Submissions')) || [];
+            submissions.push(formData);
+            
+            // Save back to localStorage
+            localStorage.setItem('a4Submissions', JSON.stringify(submissions));
+
+            // Trigger Animation Toast
+            successToast.classList.add('show');
+            contactForm.reset();
+
+            // Hide Toast after 3.5 seconds
+            setTimeout(() => {
+                successToast.classList.remove('show');
+            }, 3500);
+        });
+    }
+
 });

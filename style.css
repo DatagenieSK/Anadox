@@ -31,8 +31,6 @@ h1, h2, h3, .logo, .footer-logo {
     font-family: var(--font-heading);
 }
 
-/* Both text classes now point to orange to match your new theme */
-.text-blue { color: var(--accent-orange); } 
 .text-orange { color: var(--accent-orange); }
 
 /* Navigation */
@@ -175,7 +173,7 @@ h1, h2, h3, .logo, .footer-logo {
     font-family: var(--font-heading);
     font-weight: bold;
     font-size: 2.5rem;
-    color: var(--accent-orange); /* Changed from blue to orange */
+    color: var(--accent-orange);
     min-width: 80px;
     border-right: 3px solid var(--border-dark);
     margin-right: 2rem;
@@ -231,6 +229,74 @@ h1, h2, h3, .logo, .footer-logo {
     font-family: var(--font-heading);
 }
 
+/* Contact Form Section */
+.contact-form-section {
+    padding: 6rem 5%;
+    display: flex;
+    justify-content: center;
+    background-image: radial-gradient(#ccc 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.form-container {
+    background-color: var(--bg-cream);
+    border: 3px solid var(--border-dark);
+    box-shadow: 8px 8px 0px 0px var(--border-dark);
+    padding: 3rem;
+    max-width: 600px;
+    width: 100%;
+}
+
+.brutal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.brutal-form input,
+.brutal-form textarea {
+    width: 100%;
+    padding: 1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: #fff;
+    border: 2px solid var(--border-dark);
+    color: var(--text-black);
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+.brutal-form input:focus,
+.brutal-form textarea:focus {
+    box-shadow: 4px 4px 0px 0px var(--accent-orange);
+}
+
+.brutal-form .btn-primary {
+    align-self: flex-start;
+}
+
+/* Success Toast Animation */
+.success-toast {
+    position: fixed;
+    bottom: -100px; /* Hidden below screen */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 3px solid var(--border-dark);
+    box-shadow: 5px 5px 0px 0px var(--accent-orange);
+    padding: 1rem 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1000;
+    transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-toast.show {
+    bottom: 30px; /* Slides up */
+}
+
 /* Footer Section */
 .site-footer {
     background-color: var(--border-dark);
@@ -284,4 +350,5 @@ h1, h2, h3, .logo, .footer-logo {
     .hero-ctas { flex-direction: column; }
     .step-card { flex-direction: column; align-items: flex-start; text-align: left; padding: 1.5rem; }
     .step-number { border-right: none; border-bottom: 3px solid var(--border-dark); padding-bottom: 0.5rem; margin-bottom: 1rem; width: 100%; }
+    .form-container { padding: 2rem; }
 }

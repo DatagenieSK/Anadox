@@ -19,22 +19,22 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#features">Architecture</a></li>
             <li><a href="#services">Our Services</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact-form-section">Contact</a></li>
         </ul>
-        <a href="#contact" class="btn-primary">Get Started</a>
+        <a href="#contact-form-section" class="btn-primary">Get Started</a>
     </nav>
 
     <header id="home" class="hero">
         <h1 class="hero-title">
             Innovating Through <br>
-            <span class="text-blue">Digital</span> Solutions.
+            <span class="text-orange">Digital</span> Solutions.
         </h1>
         <p class="hero-subtitle">
             A4ANDOX is a technology company innovating the real estate sector and beyond through powerful digital solutions, intelligent automation, and seamless user experiences.
         </p>
         <div class="hero-ctas">
             <a href="#services" class="btn-primary" id="cta-main">Explore Services</a>
-            <a href="#contact" class="btn-secondary" id="cta-secondary">→ Contact Support</a>
+            <a href="#contact-form-section" class="btn-secondary" id="cta-secondary">→ Contact Support</a>
         </div>
     </header>
 
@@ -84,12 +84,30 @@
             </div>
             <div class="service-card animate-on-scroll" style="transition-delay: 0.5s;">
                 <h3>Games & Custom Apps</h3>
-                <p>Engaging game development alongside highly specialized desktop, betting, and trading applications.</p>
+                <p>Engaging game development alongside highly specialized custom desktop and web applications.</p>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="site-footer">
+    <section id="contact-form-section" class="contact-form-section">
+        <div class="form-container animate-on-scroll">
+            <h2 class="section-title text-orange" style="margin-bottom: 1rem;">Let's Talk.</h2>
+            <p style="margin-bottom: 2rem;">Ready to start your next project? Drop us a message.</p>
+            
+            <form id="a4ContactForm" class="brutal-form">
+                <input type="text" id="userName" placeholder="Your Name" required>
+                <input type="email" id="userEmail" placeholder="Email Address" required>
+                <textarea id="userMessage" rows="5" placeholder="Tell us about your project..." required></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="successToast" class="success-toast">
+        <span style="font-size: 1.5rem;">✨</span> Message Sent Successfully!
+    </div>
+
+    <footer class="site-footer">
         <div class="footer-content animate-on-scroll">
             <h2 class="footer-logo">A4ANDOX</h2>
             <div class="contact-details">
@@ -99,7 +117,7 @@
             </div>
         </div>
         <div class="copyright animate-on-scroll" style="transition-delay: 0.2s;">
-            &copy; 2026 A4ANDOX OPC PVT LTD. All rights reserved.
+            &copy; 2026 A4ANDOX OPC PVT LTD. All rights reserved. | <a href="admin.html" style="color: #777; text-decoration: none;">Admin Login</a>
         </div>
     </footer>
 
