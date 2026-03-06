@@ -6,12 +6,15 @@
     <title>A4ANDOX | Powerful Digital Solutions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
+    <div class="noise-overlay"></div>
+    <div class="custom-cursor"></div>
+
+    <nav class="navbar relative-z">
         <div class="logo">
             <span class="logo-icon">///</span> A4ANDOX
         </div>
@@ -21,103 +24,157 @@
             <li><a href="#services">Our Services</a></li>
             <li><a href="#contact-form-section">Contact</a></li>
         </ul>
-        <a href="#contact-form-section" class="btn-primary">Get Started</a>
+        <a href="#contact-form-section" class="btn-primary magnetic-btn">Get Started</a>
     </nav>
 
-    <header id="home" class="hero">
-        <h1 class="hero-title">
-            Innovating Through <br>
-            <span class="text-orange">Digital</span> Solutions.
-        </h1>
-        <p class="hero-subtitle">
-            A4ANDOX is a technology company innovating the real estate sector and beyond through powerful digital solutions, intelligent automation, and seamless user experiences.
-        </p>
-        <div class="hero-ctas">
-            <a href="#services" class="btn-primary" id="cta-main">Explore Services</a>
-            <a href="#contact-form-section" class="btn-secondary" id="cta-secondary">→ Contact Support</a>
+    <header id="home" class="hero relative-z split-layout">
+        <div class="hero-content">
+            <div class="status-badge">
+                <span class="pulse-indicator"></span> Innovating Real Estate & Tech
+            </div>
+            
+            <h1 class="hero-title">
+                Innovating Through <br>
+                <span class="text-orange highlight-stroke">Digital</span> Solutions.
+            </h1>
+            <p class="hero-subtitle">
+                A4ANDOX is a technology company innovating the real estate sector and beyond through powerful digital solutions, intelligent automation, and seamless user experiences.
+            </p>
+            <div class="hero-ctas">
+                <a href="#services" class="btn-primary magnetic-btn" id="cta-main">Explore Services</a>
+                <a href="#contact-form-section" class="btn-secondary link-hover-effect" id="cta-secondary">→ Contact Support</a>
+            </div>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="abstract-shape shape-1"></div>
+            <div class="abstract-shape shape-2"></div>
         </div>
     </header>
 
-    <section id="features" class="how-to-work">
-        <h2 class="section-title text-orange">Built for Scale</h2>
-        <p class="section-subtitle">Our technology adapts to your needs, whether you're a startup or an enterprise, ensuring performance and reliability at every stage.</p>
+    <section id="features" class="how-to-work relative-z">
+        <div class="section-header-centered">
+            <h2 class="section-title text-orange">Built for Scale</h2>
+            <p class="section-subtitle">Our technology adapts to your needs, whether you're a startup or an enterprise, ensuring performance and reliability at every stage.</p>
+        </div>
         
-        <div class="steps-container">
-            <div class="step-card animate-on-scroll">
-                <div class="step-number">01</div>
-                <div class="step-text"><strong>Cloud-Ready Architecture:</strong> Designed to handle increasing user demand seamlessly without compromising on speed.</div>
+        <div class="architecture-stack">
+            <div class="stack-item animate-on-scroll">
+                <div class="stack-number">01</div>
+                <div class="stack-content">
+                    <h3 class="stack-title">Cloud-Ready Architecture</h3>
+                    <p class="stack-text">Designed to handle increasing user demand seamlessly without compromising on speed.</p>
+                </div>
             </div>
-            <div class="step-card animate-on-scroll" style="transition-delay: 0.1s;">
-                <div class="step-number">02</div>
-                <div class="step-text"><strong>Flexible Modules:</strong> Future-proof your business with modules that allow for easy expansion as you grow.</div>
+            <div class="stack-item animate-on-scroll" style="transition-delay: 0.1s;">
+                <div class="stack-number">02</div>
+                <div class="stack-content">
+                    <h3 class="stack-title">Flexible Modules</h3>
+                    <p class="stack-text">Future-proof your business with modules that allow for easy expansion as you grow.</p>
+                </div>
             </div>
-            <div class="step-card animate-on-scroll" style="transition-delay: 0.2s;">
-                <div class="step-number">03</div>
-                <div class="step-text"><strong>Cost-Effective Scaling:</strong> Intelligent automation and optimized databases keep overhead low while performance stays high.</div>
+            <div class="stack-item animate-on-scroll" style="transition-delay: 0.2s;">
+                <div class="stack-number">03</div>
+                <div class="stack-content">
+                    <h3 class="stack-title">Cost-Effective Scaling</h3>
+                    <p class="stack-text">Intelligent automation and optimized databases keep overhead low while performance stays high.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="services">
-        <h2 class="section-title text-orange" style="text-align: center; margin-bottom: 3rem;">Our Services</h2>
+    <section id="services" class="services relative-z">
+        <h2 class="section-title text-orange text-center marquee-style">Our Services — Our Services — Our Services</h2>
         
-        <div class="services-grid">
-            <div class="service-card animate-on-scroll">
+        <div class="bento-grid">
+            <div class="service-card bento-featured animate-on-scroll">
+                <div class="card-icon">💻</div>
                 <h3>Web & App Development</h3>
                 <p>Custom websites and Android/iOS applications built with modern technologies tailored to your business needs.</p>
             </div>
-            <div class="service-card animate-on-scroll" style="transition-delay: 0.1s;">
+            
+            <div class="service-card bento-standard animate-on-scroll" style="transition-delay: 0.1s;">
+                <div class="card-icon">⛓️</div>
                 <h3>CRM, ERP & Blockchain</h3>
                 <p>Integrated solutions for customer management, enterprise resource planning, and secure blockchain implementations.</p>
             </div>
-            <div class="service-card animate-on-scroll" style="transition-delay: 0.2s;">
+            
+            <div class="service-card bento-tall animate-on-scroll" style="transition-delay: 0.2s;">
+                <div class="card-icon">🏢</div>
                 <h3>Real Estate & E-Commerce</h3>
                 <p>Specialized websites, apps, CRMs, databases, and marketing tools built specifically for real estate and e-commerce growth.</p>
             </div>
-            <div class="service-card animate-on-scroll" style="transition-delay: 0.3s;">
+            
+            <div class="service-card bento-wide animate-on-scroll" style="transition-delay: 0.3s;">
+                <div class="card-icon">🤖</div>
                 <h3>AI & Chat Integration</h3>
                 <p>Seamless AI chat integration and websites with built-in AI capabilities for smarter user interaction and solutions.</p>
             </div>
-            <div class="service-card animate-on-scroll" style="transition-delay: 0.4s;">
+            
+            <div class="service-card bento-standard animate-on-scroll" style="transition-delay: 0.4s;">
+                <div class="card-icon">🎨</div>
                 <h3>Designing & Branding</h3>
                 <p>Logo, website, app interfaces, and 3D model designs to elevate your brand's visual identity.</p>
             </div>
-            <div class="service-card animate-on-scroll" style="transition-delay: 0.5s;">
+            
+            <div class="service-card bento-standard animate-on-scroll" style="transition-delay: 0.5s;">
+                <div class="card-icon">🎮</div>
                 <h3>Games & Custom Apps</h3>
                 <p>Engaging game development alongside highly specialized custom desktop and web applications.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact-form-section" class="contact-form-section">
-        <div class="form-container animate-on-scroll">
-            <h2 class="section-title text-orange" style="margin-bottom: 1rem;">Let's Talk.</h2>
-            <p style="margin-bottom: 2rem;">Ready to start your next project? Drop us a message.</p>
+    <section id="contact-form-section" class="contact-form-section relative-z">
+        
+        <div class="terminal-container animate-on-scroll">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="t-btn close"></span>
+                    <span class="t-btn min"></span>
+                    <span class="t-btn max"></span>
+                </div>
+                <div class="terminal-title">~/a4andox/initiate_project.exe</div>
+            </div>
             
-            <form id="a4ContactForm" class="brutal-form">
-                <input type="text" id="userName" placeholder="Your Name" required>
-                <input type="email" id="userEmail" placeholder="Email Address" required>
-                <textarea id="userMessage" rows="5" placeholder="Tell us about your project..." required></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
+            <div class="terminal-body">
+                <h2 class="terminal-heading text-orange">Let's Talk.</h2>
+                <p class="terminal-sub">Ready to start your next project? Drop us a message.</p>
+                
+                <form id="a4ContactForm" class="brutal-form code-style-form">
+                    <div class="input-group">
+                        <label for="userName">>> Name_</label>
+                        <input type="text" id="userName" placeholder="Your Name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="userEmail">>> Email_</label>
+                        <input type="email" id="userEmail" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="userMessage">>> Requirements_</label>
+                        <textarea id="userMessage" rows="5" placeholder="Tell us about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary run-command-btn">Run Execution</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <div id="successToast" class="success-toast">
-        <span style="font-size: 1.5rem;">✨</span> Message Sent Successfully!
+        <span style="font-size: 1.5rem;">✨</span> Payload Delivered Successfully!
     </div>
 
-    <footer class="site-footer">
+    <footer class="site-footer relative-z">
         <div class="footer-content animate-on-scroll">
             <h2 class="footer-logo">A4ANDOX</h2>
-            <div class="contact-details">
+            <div class="contact-details terminal-font">
                 <p>Sco 262, Cabin No. 1, Second Floor<br>Sector 14, Panchkula, Haryana, India</p>
                 <p><strong>Email:</strong> support@a4andox.in</p>
                 <p><strong>Phone:</strong> +91-9023457656</p>
             </div>
         </div>
         <div class="copyright animate-on-scroll" style="transition-delay: 0.2s;">
-            &copy; 2026 A4ANDOX OPC PVT LTD. All rights reserved. | <a href="admin.html" style="color: #777; text-decoration: none;">Admin Login</a>
+            &copy; 2026 A4ANDOX OPC PVT LTD. All rights reserved. | <a href="admin.html" class="admin-link">Admin Access</a>
         </div>
     </footer>
 
