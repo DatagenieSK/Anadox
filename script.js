@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Smooth scrolling for navigation links
+    // 1. Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -23,16 +23,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Optional: Add a simple hover effect to service cards using JS
-    const serviceCards = document.querySelectorAll('.service-card');
-    
-    serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.backgroundColor = '#fff';
+    // 2. Intersection Observer for scroll animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Triggers when 10% of the element is visible in the viewport
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Stops observing once it has animated in
+            }
         });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.backgroundColor = 'var(--bg-cream)';
-        });
+    }, observerOptions);
+
+    // Select all elements with the animate-on-scroll class and observe them
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+        observer.observe(el);
     });
+
 });
