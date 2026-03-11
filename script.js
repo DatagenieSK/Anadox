@@ -1,6 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Smooth scrolling for navigation links
+    // 1. Custom Cursor tracking (Desktop)
+    const cursor = document.querySelector('.custom-cursor');
+    if (cursor) {
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    }
+
+    // 2. Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -23,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Intersection Observer for scroll animations
+    // 3. Intersection Observer for scroll animations
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1 // Triggers when 10% of the element is visible in the viewport
+        threshold: 0.1 // Triggers when 10% of the element is visible
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -44,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // 3. Form Submission & LocalStorage Logic
+    // 4. Form Submission & LocalStorage Logic
     const contactForm = document.getElementById('a4ContactForm');
     const successToast = document.getElementById('successToast');
 
