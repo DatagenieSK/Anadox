@@ -1,13 +1,14 @@
 // 0. System Boot Loader Logic
-    const loader = document.getElementById('a4-loader');
-    
-    // We use window.addEventListener('load') to ensure all images and assets are fully loaded
-    window.addEventListener('load', () => {
-        // Enforce a minimum display time of 2.4 seconds so the boot animation plays out fully
-        setTimeout(() => {
-            loader.classList.add('hidden');
-        }, 2400); 
-    });
+const loader = document.getElementById('a4-loader');
+
+// We use window.addEventListener('load') to ensure all images and assets are fully loaded
+window.addEventListener('load', () => {
+    // Enforce a minimum display time of 2.4 seconds so the boot animation plays out fully
+    setTimeout(() => {
+        loader.classList.add('hidden');
+    }, 2400); 
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Custom Cursor tracking (Desktop)
@@ -95,6 +96,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 successToast.classList.remove('show');
             }, 3500);
         });
+    }
+
+    // 5. NEW: Hero Terminal Typing Animation
+    const heroTerminal = document.querySelector('.hero-terminal .terminal-body');
+    if (heroTerminal) {
+        const lines = heroTerminal.querySelectorAll('.code-line');
+        // Hide all lines initially
+        lines.forEach(line => line.style.display = 'none'); 
+
+        // Wait for the main boot loader to finish before starting the terminal typing
+        setTimeout(() => {
+            let delay = 0;
+            lines.forEach((line) => {
+                setTimeout(() => {
+                    line.style.display = 'block';
+                }, delay);
+                delay += 450; // 450ms wait between each line popping up
+            });
+        }, 2600); // 2.6 seconds delay matches the loader finishing
     }
 
 });
