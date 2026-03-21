@@ -1,3 +1,13 @@
+// 0. System Boot Loader Logic
+    const loader = document.getElementById('a4-loader');
+    
+    // We use window.addEventListener('load') to ensure all images and assets are fully loaded
+    window.addEventListener('load', () => {
+        // Enforce a minimum display time of 2.4 seconds so the boot animation plays out fully
+        setTimeout(() => {
+            loader.classList.add('hidden');
+        }, 2400); 
+    });
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Custom Cursor tracking (Desktop)

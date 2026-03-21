@@ -331,3 +331,87 @@ h1, h2, h3, .logo, .footer-logo, .terminal-heading {
     .terminal-body { padding: 1.5rem; }
     .terminal-heading { font-size: 2rem; }
 }
+/* --- SYSTEM BOOT LOADER --- */
+.a4-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-cream);
+    background-image: radial-gradient(#ccc 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 99999; /* Keeps it above the custom cursor and noise */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
+}
+
+.loader-terminal {
+    max-width: 500px;
+    transform: translateY(0);
+    animation: slightFloat 3s ease-in-out infinite;
+}
+
+.loader-terminal .terminal-body {
+    padding: 2.5rem;
+    font-weight: bold;
+    color: var(--text-black);
+}
+
+.loading-dots::after {
+    content: '.';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 24px;
+    border: 3px solid var(--border-dark);
+    margin: 1.5rem 0;
+    padding: 2px;
+    background-color: #fff;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--accent-orange);
+    animation: loadProgress 2s ease-out forwards;
+}
+
+@keyframes loadProgress {
+    0% { width: 0%; }
+    40% { width: 45%; }
+    70% { width: 80%; }
+    100% { width: 100%; }
+}
+
+#loader-status {
+    opacity: 0;
+    color: var(--accent-orange);
+    animation: showStatus 0.1s forwards 2s; /* Shows up when progress bar hits 100% */
+}
+
+@keyframes showStatus {
+    to { opacity: 1; }
+}
+
+@keyframes slightFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* The class JS will add to slide the loader out of the way */
+.a4-loader.hidden {
+    transform: translateY(-100vh); 
+    pointer-events: none;
+}
